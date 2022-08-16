@@ -23,30 +23,27 @@ public class Results {
 
     @Id
     @Column(name="res_id")
-    private Integer res_id;
+    private String res_id;
 
     @Column(name="result")
     private String result;
 
-    @Column(name="key_id")
-    private Integer key_id;
 
 
     public Results() {
     }
 
-    public Results(Integer res_id, String result, Integer key_id) {
+    public Results(String res_id, String result) {
         this.res_id = res_id;
         this.result = result;
-        this.key_id = key_id;
     }
 
-    public Integer getResultsId() {
+    public String getResultsId() {
         return res_id;
     }
 
 
-    public void setResultsId(Integer res_id) {
+    public void setResultsId(String res_id) {
         this.res_id = res_id;
     }
 
