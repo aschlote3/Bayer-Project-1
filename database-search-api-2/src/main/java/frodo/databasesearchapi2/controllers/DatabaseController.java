@@ -38,6 +38,7 @@ public class DatabaseController {
         return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/{id}")
     public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
         List<Results> _result = resultsRepository.findAll();
@@ -49,15 +50,20 @@ public class DatabaseController {
                 continue;
             }
         }
-        return new ResponseEntity<>(output, HttpStatus.OK);
+        if (output.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        else {
+            return new ResponseEntity<>(output, HttpStatus.OK);
+        }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+  /*  @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/all")
     ResponseEntity<List<Results>> getAllResults() {
         List<Results> results = resultsRepository.findAll();
         return new ResponseEntity<List<Results>>(results, HttpStatus.OK);
-    }
+    }*/
 
 
 
