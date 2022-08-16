@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -47,10 +48,11 @@ public class DatabaseController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/all")
-    public ResponseEntity<List<Results>> getAllResults() {
+    ResponseEntity<List<Results>> getAllResults() {
         List<Results> results = resultsRepository.findAll();
-        return new ResponseEntity<>(results, HttpStatus.OK);
+        return new ResponseEntity<List<Results>>(results, HttpStatus.OK);
     }
 
 
