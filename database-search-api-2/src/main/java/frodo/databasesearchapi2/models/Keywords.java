@@ -14,6 +14,7 @@ public class Keywords {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+
     @Column(name="key_id")
     private Integer key_id;
     @Column(name="keyword")

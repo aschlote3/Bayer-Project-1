@@ -26,7 +26,7 @@ public class DatabaseController {
     @Autowired
     ResultsRepository resultsRepository;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/keywords")
     public ResponseEntity<Keywords> createReview(@RequestBody Keywords keyword) {
         try {
@@ -37,10 +37,11 @@ public class DatabaseController {
         }
         return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/{id}")
     public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
         List<Results> _result = resultsRepository.findAll();
+        System.out.println(_result);
         List<Results> output = new ArrayList<>();
         for (Results result : _result) {
             if (result.getRes_id().equals(id)) {
