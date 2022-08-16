@@ -9,13 +9,13 @@ const Login = ({ setLoginState }) => {
     const [passState, setPassState] = useState(null);
 
     const checkCredentials = () => {
-        if (userState != user && passState != pass) {
+        if (userState !== user && passState !== pass) {
             console.log("login fail : invalid username and password")
             return false;
-        } else if (userState != user) {
+        } else if (userState !== user) {
             console.log("login fail : invalid username");
             return false;
-        } else if (passState != pass) {
+        } else if (passState !== pass) {
             console.log("login fail : invalid password");
             return false;
         } else {
