@@ -8,18 +8,17 @@ import React, { useState, setState } from 'react';
 
 function App() {
 
-  const [loginState, setLoginState] = useState(false);
+    const [loginState, setLoginState] = useState(false);
 
-
-  return (
-    <div>
-      {loginState === false ?
-        <Login setLoginState={setLoginState} />
-        : <Search />
-      }
-      <Results />
-    </div>
-  );
+    return (
+        <div>
+            {loginState === false ?
+                <Login setLoginState={setLoginState} />
+                : <Search />
+            }
+            <Results />
+        </div>
+    );
 }
 
 export default App;

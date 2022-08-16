@@ -7,7 +7,6 @@ CREATE TABLE keywords (
 );
 
 CREATE TABLE results (
-    res_id INT NOT NULL,
-    result VARCHAR(255) DEFAULT '',
-    key_id INT NOT NULL
+    res_id VARCHAR(255) NOT NULL,
+    result VARCHAR(255) DEFAULT ''
 );

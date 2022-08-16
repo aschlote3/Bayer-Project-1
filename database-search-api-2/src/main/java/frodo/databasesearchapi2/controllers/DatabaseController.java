@@ -38,16 +38,20 @@ public class DatabaseController {
         return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
 
-    @GetMapping("/results/{id}")
-    public ResponseEntity<Keywords> getResultsById(@PathVariable("id") Integer id, @RequestBody Keywords keyword) {
-        Optional<Keywords> reviewData = keywordsRepository.findById(id);
-        if (reviewData.isPresent()) {
-            return new ResponseEntity<>(reviewData.get(), HttpStatus.OK);
+    @GetMapping("/topic/{id}")
+    public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
+        List<Results> _result = resultsRepository.findAll();
+        List<Results> output = new ArrayList<>();
+        for (Results result : _result) {
+            if (result.getRes_id().equals(id)) {
+                output.add(result);
+            } else {
+                continue;
+            }
         }
-        else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(output, HttpStatus.OK);
     }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/all")
     ResponseEntity<List<Results>> getAllResults() {
