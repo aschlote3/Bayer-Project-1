@@ -31,19 +31,8 @@ function App() {
         <div>
             {loginState === false ?
                 <Login setLoginState={setLoginState}/>
-                : <Search />
+                : <Search setResultsState={setResultsState}/>
             }
-           <Results />
-
-            
-
-
-            <h3>Add: </h3>
-            <input type='text'></input>
-            <button onClick={() => sendRequest(additionState)}>Send</button>
-
-
-            <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
             
 
