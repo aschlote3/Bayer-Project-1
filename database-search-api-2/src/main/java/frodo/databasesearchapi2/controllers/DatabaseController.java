@@ -29,6 +29,9 @@ public class DatabaseController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/keywords")
     public ResponseEntity<Keywords> createReview(@RequestBody Keywords keyword) {
+        System.out.println(keyword);
+        System.out.println(keyword.getKeywordId());
+        System.out.println(keyword.getKeyword());
         try {
             Keywords _keyword = keywordsRepository.save(new Keywords(keyword.getKeyword()));
             return new ResponseEntity<>(_keyword, HttpStatus.CREATED);

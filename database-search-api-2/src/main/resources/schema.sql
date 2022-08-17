@@ -2,7 +2,7 @@ drop table if exists keywords;
 drop table if exists results;
 
 CREATE TABLE keywords (
-    key_id INT NOT NULL,
+    key_id INT,
     keyword VARCHAR(255)
 );
 
