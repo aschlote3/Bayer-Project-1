@@ -10,13 +10,10 @@ import React, { useState, setState } from 'react';
 
 function App() {
 
-    const base = {
-        'key_id':'2',
-        'keyword':'lettuce'
-    }
+    
 
     const [loginState, setLoginState] = useState(false);
-    const [additionState, setAdditionState] = useState(base);
+    
     
     const [resultsState, setResultsState] = useState([]);
 
@@ -40,7 +37,7 @@ function App() {
             }
             <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
-            <AddToDatabase />
+            <AddToDatabase/>
 
         </div>
     );

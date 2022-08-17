@@ -5,29 +5,19 @@ const AddToDatabase = () => {
 
     const [input, setInput] = useState ("");
 
-    const update = {
+    const data = {
         keyword : input,
         };
-        
-        const options = {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(update),
-        };
 
-        fetch('localhost:8090/api/keywords', options)
-        .then(data => {
-            if (!data.ok) {
-              throw Error(data.status);
-             }
-             return data.json();
-            }).then(update => {
-            console.log(update);
+     const sendRequest = (data) => {
+            fetch("http://localhost:8090/api/keywords", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(res => {
+                console.log("Request complete! response:", res);
             });
-   
-
+        }
     return (
         <div>
             <label for="keyword">Add To Topics</label><br></br>
