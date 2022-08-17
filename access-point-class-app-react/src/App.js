@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import Login from './Login';
 import Search from './Search';
 import Results from './Results';
+import AddToDatabase from './AddToDatabase';
 import React, { useState, setState } from 'react';
 
 
@@ -36,8 +37,7 @@ function App() {
                 <Login setLoginState={setLoginState}/>
                 : <Search />
             }
-<<<<<<< HEAD
-            <Results />
+           <Results />
 
             
 
@@ -46,10 +46,11 @@ function App() {
             <input type='text'></input>
             <button onClick={() => sendRequest(additionState)}>Send</button>
 
-=======
+
             <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
->>>>>>> 1dd210d51d7c9fe35b946f662452de2fb54942ff
+            <AddToDatabase />
+
         </div>
     );
 }
