@@ -16,6 +16,18 @@ function App() {
     
     
     const [resultsState, setResultsState] = useState([]);
+    const { tabState, settabState } = useState("Topic")
+
+    const tabMenu = () => {
+        if (tabState == "Topic") {
+            return (<Results />)
+        } else if (tabState === "Messages") {
+            return (<div></div>);
+        } else if (tabState === "Steps") {
+            return (<div></div>);
+        }
+
+    }
 
     const sendRequest = (data) => {
         fetch("http://localhost:8090/api/keywords", {
@@ -33,7 +45,7 @@ function App() {
         <div>
             {loginState === false ?
                 <Login setLoginState={setLoginState}/>
-                : <div><Tab/><Search setResultsState={setResultsState}/><Results resultsState={resultsState}/><AddToDatabase/></div>
+                : <div><Tab setLoginState={setLoginState} tabMenu={tabMenu}/><Search setResultsState={setResultsState}/><Results resultsState={resultsState}/><AddToDatabase/></div>
             }
             
             
