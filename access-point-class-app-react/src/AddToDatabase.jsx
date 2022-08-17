@@ -9,6 +9,10 @@ const AddToDatabase = () => {
         keyword : input
         };
 
+     const clear = () => {
+        setInput('');
+        }
+
      const sendRequest = (keyword) => {
             fetch("http://localhost:8090/api/keywords", {
                 method: "POST",
@@ -22,9 +26,9 @@ const AddToDatabase = () => {
     return (
         <div>
             <label for="keyword">Add To Topics</label><br></br>
-            <input type="text" id="keyword" name="keyword" onInput={e => setInput(e.target.value)}/><br></br>
+            <input type="text" id="keyword" name="keyword" value={input} onInput={e => setInput(e.target.value)}/><br></br>
             <button onClick={() => sendRequest(keyword)}>Add To Topics</button>
-            <button>Clear</button>
+            <button className="clearName" type="submit" onClick={()=>{clear()}}>Clear</button>
             <br></br>
             
         </div>
