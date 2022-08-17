@@ -1,13 +1,16 @@
 import React, { useState } from "react"
-import AddToDatabase from "./AddToDatabase";
 
-const Tab = () => {
-
-    const [tabState, setTabState] = useState('topic');
-
-return (
-    <div></div>
-)
+const Tab = ({setLoginState, tabMenu}) => {
+    
+    return (
+        <div>
+            <button>Topic</button>
+            <button>Messages</button>
+            <button>Steps</button>
+            <button onClick={() => {setLoginState(false)}}>Back</button>
+            <div>{tabMenu()}</div>
+        </div>
+    )
 }
 
 export default Tab;
