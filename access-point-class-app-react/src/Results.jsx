@@ -6,7 +6,7 @@ const Results = () => {
     const [resultsState, setResultsState] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8090/api/topic/all')
+        fetch('http://localhost:8090/api/topic/loop')
             .then(response => response.json())
             .then(data => {
                 setResultsState(data);
@@ -26,7 +26,7 @@ const Results = () => {
     }
 
     return (
-        <div>
+        <div className='resultsContainer'>
             <h3>Results:</h3>
             {getResultsMapping(resultsState)}
         </div>

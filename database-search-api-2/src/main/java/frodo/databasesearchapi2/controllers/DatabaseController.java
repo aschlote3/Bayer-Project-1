@@ -26,22 +26,21 @@ public class DatabaseController {
     @Autowired
     ResultsRepository resultsRepository;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/keywords")
-    public ResponseEntity<Keywords> createReview(@RequestBody Keywords keyword) {
-        try {
-            Keywords _keyword = keywordsRepository.save(new Keywords(keyword.getKeyword()));
-            return new ResponseEntity<>(_keyword, HttpStatus.CREATED);
-        } catch (Exception e) {
-
-        }
-        return new ResponseEntity<Keywords>(HttpStatus.OK);
+    public Keywords createReview(@RequestBody Keywords keyword) {
+        System.out.println(keyword);
+        System.out.println(keyword.getKeywordId());
+        System.out.println(keyword.getKeyword());
+        return keywordsRepository.save(new Keywords(keyword.getKeyword()));
+        //return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/{id}")
     public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
         List<Results> _result = resultsRepository.findAll();
+        System.out.println(_result);
         List<Results> output = new ArrayList<>();
         for (Results result : _result) {
             if (result.getRes_id().equals(id)) {
@@ -58,12 +57,6 @@ public class DatabaseController {
         }
     }
 
-  /*  @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/topic/all")
-    ResponseEntity<List<Results>> getAllResults() {
-        List<Results> results = resultsRepository.findAll();
-        return new ResponseEntity<List<Results>>(results, HttpStatus.OK);
-    }*/
 
 
 
