@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import Login from './Login';
 import Search from './Search';
 import Results from './Results';
-import AddToDatabase from './AddToDatabase';
 import React, { useState, setState } from 'react';
 
 
@@ -35,19 +34,8 @@ function App() {
         <div>
             {loginState === false ?
                 <Login setLoginState={setLoginState}/>
-                : <Search />
+                : <Search setResultsState={setResultsState}/>
             }
-           <Results />
-
-            
-
-
-            <h3>Add: </h3>
-            <input type='text'></input>
-            <button onClick={() => sendRequest(additionState)}>Send</button>
-
-
-            <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
             <AddToDatabase />
 
