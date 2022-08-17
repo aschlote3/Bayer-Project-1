@@ -17,6 +17,8 @@ function App() {
                 : <Search />
             }
             <Results />
+            
+
         </div>
     );
 }
