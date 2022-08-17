@@ -1,0 +1,56 @@
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --light-blue: hsl(210, 100%, 75%);
+    --independence: hsl(341, 18%, 58);
+}
+
+
+
+.loginContainer {
+    text-align: center;
+    background-color: var(--independence);
+    border-radius: 20px;
+    padding-bottom: 50px;
+    padding-top: 16px;
+}
+
+.username {
+    margin-bottom: 12px;
+}
+
+.loginProceed {
+    background-color: var(--light-blue);
+    padding: 1rem 0;
+    color: white;
+    box-shadow: 0 20px 30px -8px rgb(197 189 245);
+    box-sizing: border-box;
+    width: 100px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-right: 12px;
+}
+
+.loginProceed:hover {
+    opacity: 0.8;
+}
+
+.clearName {
+    background-color: var(--light-blue);
+    padding: 1rem 0;
+    color: white;
+    box-shadow: 0 20px 30px -8px rgb(197 189 245);
+    box-sizing: border-box;
+    width: 100px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-right: 12px;
+    background-color: red;
+}
+
+.clearName:hover {
+    opacity: 0.8;
+}

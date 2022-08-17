@@ -1,17 +1,7 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Results = () => {
+const Results = ({resultsState}) => {
 
-
-    const [resultsState, setResultsState] = useState([]);
-
-    const fetchResults = async () => {
-        try {
-            const response = await fetch(`localhost:8090/api/topic/all`);
-            setResultsState(response);
-        } catch (e) {
-        }
-    };
 
     const getResultsMapping = (results) => {
         return (
@@ -21,14 +11,11 @@ const Results = () => {
                 </div>
             )
         )
-        
+
     }
-    useEffect(() => {
-        fetchResults();
-    }, []);
 
     return (
-        <div>
+        <div className='resultsContainer'>
             <h3>Results:</h3>
             {getResultsMapping(resultsState)}
         </div>

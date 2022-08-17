@@ -12,11 +12,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
 
-@RestController
+@RestController 
 @RequestMapping("/api/")
 public class DatabaseController {
     @Autowired
@@ -25,33 +26,37 @@ public class DatabaseController {
     @Autowired
     ResultsRepository resultsRepository;
 
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/keywords")
-    public ResponseEntity<Keywords> createReview(@RequestBody Keywords keyword) {
-        try {
-            Keywords _keyword = keywordsRepository.save(new Keywords(keyword.getKeyword()));
-            return new ResponseEntity<>(_keyword, HttpStatus.CREATED);
-        } catch (Exception e) {
-
-        }
-        return new ResponseEntity<Keywords>(HttpStatus.OK);
+    public Keywords createReview(@RequestBody Keywords keyword) {
+        System.out.println(keyword);
+        System.out.println(keyword.getKeywordId());
+        System.out.println(keyword.getKeyword());
+        return keywordsRepository.save(new Keywords(keyword.getKeyword()));
+        //return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
 
-    @GetMapping("/results/{id}")
-    public ResponseEntity<Keywords> getResultsById(@PathVariable("id") Integer id, @RequestBody Keywords keyword) {
-        Optional<Keywords> reviewData = keywordsRepository.findById(id);
-        if (reviewData.isPresent()) {
-            return new ResponseEntity<>(reviewData.get(), HttpStatus.OK);
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/topic/{id}")
+    public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
+        List<Results> _result = resultsRepository.findAll();
+        System.out.println(_result);
+        List<Results> output = new ArrayList<>();
+        for (Results result : _result) {
+            if (result.getRes_id().equals(id)) {
+                output.add(result);
+            } else {
+                continue;
+            }
+        }
+        if (output.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(output, HttpStatus.OK);
         }
     }
-    @GetMapping("/topic/all")
-    public ResponseEntity<List<Results>> getAllResults() {
-        List<Results> results = resultsRepository.findAll();
-        return new ResponseEntity<>(results, HttpStatus.OK);
-    }
+
 
 
 

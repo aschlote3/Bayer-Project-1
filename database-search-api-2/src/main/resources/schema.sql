@@ -2,12 +2,13 @@ drop table if exists keywords;
 drop table if exists results;
 
 CREATE TABLE keywords (
-    key_id INT NOT NULL,
+    key_id INT NOT NULL AUTO_INCREMENT,
     keyword VARCHAR(255)
 );
 
 CREATE TABLE results (
-    res_id INT NOT NULL,
-    result VARCHAR(255) DEFAULT '',
-    key_id INT NOT NULL
+    pk INT NOT NULL,
+    res_id VARCHAR(255) NOT NULL,
+    result VARCHAR(255) DEFAULT ''
+
 );
