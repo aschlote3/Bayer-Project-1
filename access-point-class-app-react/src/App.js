@@ -33,11 +33,11 @@ function App() {
         <div>
             {loginState === false ?
                 <Login setLoginState={setLoginState}/>
-                : <Tab/>
+                : <div><Tab/><Search setResultsState={setResultsState}/><Results resultsState={resultsState}/><AddToDatabase/></div>
             }
-            <Search setResultsState={setResultsState}/>
-            <Results resultsState={resultsState}/>
-            <AddToDatabase/>
+            
+            
+            
 
         </div>
     );
