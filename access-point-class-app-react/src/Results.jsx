@@ -26,7 +26,7 @@ const Results = () => {
     }
 
     return (
-        <div>
+        <div className='resultsContainer'>
             <h3>Results:</h3>
             {getResultsMapping(resultsState)}
         </div>
