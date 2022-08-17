@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@RestController
+@RestController 
 @RequestMapping("/api/")
 public class DatabaseController {
     @Autowired
@@ -28,15 +28,14 @@ public class DatabaseController {
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/keywords")
-    public ResponseEntity<Keywords> createReview(@RequestBody Keywords keyword) {
-        try {
-            Keywords _keyword = keywordsRepository.save(new Keywords(keyword.getKeyword()));
-            return new ResponseEntity<>(_keyword, HttpStatus.CREATED);
-        } catch (Exception e) {
-
-        }
-        return new ResponseEntity<Keywords>(HttpStatus.OK);
+    public Keywords createReview(@RequestBody Keywords keyword) {
+        System.out.println(keyword);
+        System.out.println(keyword.getKeywordId());
+        System.out.println(keyword.getKeyword());
+        return keywordsRepository.save(new Keywords(keyword.getKeyword()));
+        //return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/{id}")
     public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
@@ -50,15 +49,14 @@ public class DatabaseController {
                 continue;
             }
         }
-        return new ResponseEntity<>(output, HttpStatus.OK);
+        if (output.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        else {
+            return new ResponseEntity<>(output, HttpStatus.OK);
+        }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/topic/all")
-    ResponseEntity<List<Results>> getAllResults() {
-        List<Results> results = resultsRepository.findAll();
-        return new ResponseEntity<List<Results>>(results, HttpStatus.OK);
-    }
 
 
 

@@ -23,6 +23,11 @@ public class Keywords {
     public Keywords() {
     }
 
+    public Keywords(Integer key_id, String keyword) {
+        this.key_id = key_id;
+        this.keyword = keyword;
+    }
+
     public Keywords(String keyword) {
         this.keyword = keyword;
     }
