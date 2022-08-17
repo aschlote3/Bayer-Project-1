@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import Login from './Login';
 import Search from './Search';
 import Results from './Results';
+import AddToDatabase from './AddToDatabase';
+import Tab from './Tab';
 import React, { useState, setState } from 'react';
 
 
@@ -32,10 +34,11 @@ function App() {
 
     return (
         <div>
-            {loginState === false ?
+            {loginState === true ?
                 <Login setLoginState={setLoginState}/>
-                : <Search setResultsState={setResultsState}/>
+                : <Tab/>
             }
+            <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
             <AddToDatabase />
 
