@@ -28,17 +28,12 @@ const Login = ({ setLoginState }) => {
     const doLogin = () => {
         setLoginState(checkCredentials());
     }
-    const clear = () => {
-        setUserState('');
-        setPassState('');
-    }
 
     return (
         <div className="loginContainer">
             <h1>Access Point Class of 2022</h1>
             <h3>Let's Go Get It</h3><br></br>
             <label for="username">Username</label><br></br>
-            <input type="text" id="username" name="username" className="username" onInput={e => setUserState(e.target.value)} value={userState}/><br></br>
             <label for="password">Password</label><br></br>
             <input type="text" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState}/><br></br>
             <button className="loginProceed" onClick={() => doLogin()}>Login</button>

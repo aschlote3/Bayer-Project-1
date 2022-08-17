@@ -50,3 +50,7 @@
     margin-right: 12px;
     background-color: red;
 }
+
+.clearName:hover {
+    opacity: 0.8;
+}
