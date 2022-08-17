@@ -15,6 +15,8 @@ function App() {
 
     const [loginState, setLoginState] = useState(false);
     const [additionState, setAdditionState] = useState(base);
+    
+    const [resultsState, setResultsState] = useState([]);
 
     const sendRequest = (data) => {
         fetch("http://localhost:8090/api/keywords", {
@@ -26,12 +28,15 @@ function App() {
         });
     }
 
+    
+
     return (
         <div>
             {loginState === false ?
-                <Login setLoginState={setLoginState} />
+                <Login setLoginState={setLoginState}/>
                 : <Search />
             }
+<<<<<<< HEAD
             <Results />
 
             
@@ -41,6 +46,10 @@ function App() {
             <input type='text'></input>
             <button onClick={() => sendRequest(additionState)}>Send</button>
 
+=======
+            <Search setResultsState={setResultsState}/>
+            <Results resultsState={resultsState}/>
+>>>>>>> 1dd210d51d7c9fe35b946f662452de2fb54942ff
         </div>
     );
 }
