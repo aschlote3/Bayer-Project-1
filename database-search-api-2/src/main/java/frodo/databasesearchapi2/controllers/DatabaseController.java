@@ -57,12 +57,6 @@ public class DatabaseController {
         }
     }
 
-  /*  @CrossOrigin(origins = "http://localhost:3000")
-    @GetMapping("/topic/all")
-    ResponseEntity<List<Results>> getAllResults() {
-        List<Results> results = resultsRepository.findAll();
-        return new ResponseEntity<List<Results>>(results, HttpStatus.OK);
-    }*/
 
 
 

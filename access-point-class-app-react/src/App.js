@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import Login from './Login';
 import Search from './Search';
 import Results from './Results';
-import Tab from './Tab';
 import React, { useState, setState } from 'react';
 
 
@@ -37,8 +36,9 @@ function App() {
                 <Login setLoginState={setLoginState}/>
                 : <Search setResultsState={setResultsState}/>
             }
-            
             <Results resultsState={resultsState}/>
+            <AddToDatabase />
+
         </div>
     );
 }
