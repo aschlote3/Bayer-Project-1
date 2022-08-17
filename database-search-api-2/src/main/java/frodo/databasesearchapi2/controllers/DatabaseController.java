@@ -50,7 +50,12 @@ public class DatabaseController {
                 continue;
             }
         }
-        return new ResponseEntity<>(output, HttpStatus.OK);
+        if (output.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        else {
+            return new ResponseEntity<>(output, HttpStatus.OK);
+        }
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
