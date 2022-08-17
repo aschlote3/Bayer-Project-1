@@ -22,18 +22,27 @@ public class Results {
 
 
     @Id
+    @Column(name = "pk")
+    private Integer pk;
     @Column(name="res_id")
     private String res_id;
 
     @Column(name="result")
     private String result;
 
+    public Integer getPk() {
+        return pk;
+    }
 
+    public void setPk(Integer pk) {
+        this.pk = pk;
+    }
 
     public Results() {
     }
 
-    public Results(String res_id, String result) {
+    public Results(Integer pk, String res_id, String result) {
+        this.pk = pk;
         this.res_id = res_id;
         this.result = result;
     }
