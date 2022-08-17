@@ -35,6 +35,7 @@ public class DatabaseController {
         return keywordsRepository.save(new Keywords(keyword.getKeyword()));
         //return new ResponseEntity<Keywords>(HttpStatus.OK);
     }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/{id}")
     public ResponseEntity<List<Results>> getResultsById(@PathVariable("id") String id) {
@@ -56,12 +57,12 @@ public class DatabaseController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+  /*  @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/topic/all")
     ResponseEntity<List<Results>> getAllResults() {
         List<Results> results = resultsRepository.findAll();
         return new ResponseEntity<List<Results>>(results, HttpStatus.OK);
-    }
+    }*/
 
 
 
