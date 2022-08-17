@@ -2,17 +2,13 @@ import logo from './logo.svg';
 import Login from './Login';
 import Search from './Search';
 import Results from './Results';
-import AddToDatabase from './AddToDatabase';
 import React, { useState, setState } from 'react';
 
 
 
 function App() {
 
-    const base = {
-        'key_id':'2',
-        'keyword':'lettuce'
-    }
+    
 
     const [loginState, setLoginState] = useState(false);
     const [additionState, setAdditionState] = useState(base);
@@ -49,7 +45,7 @@ function App() {
 
             <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
-            <AddToDatabase />
+            
 
         </div>
     );
