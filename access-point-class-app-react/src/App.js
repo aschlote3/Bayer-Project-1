@@ -3,6 +3,7 @@ import Login from './Login';
 import Search from './Search';
 import Results from './Results';
 import AddToDatabase from './AddToDatabase';
+import Tab from './Tab';
 import React, { useState, setState } from 'react';
 
 
@@ -30,11 +31,10 @@ function App() {
 
     return (
         <div>
-            {loginState === false ?
+            {loginState === true ?
                 <Login setLoginState={setLoginState}/>
-                : <Search />
+                : <Tab/>
             }
-           <Results />
             <Search setResultsState={setResultsState}/>
             <Results resultsState={resultsState}/>
             <AddToDatabase/>

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@RestController
+@RestController 
 @RequestMapping("/api/")
 public class DatabaseController {
     @Autowired
