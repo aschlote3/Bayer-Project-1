@@ -12,9 +12,7 @@ const Results = ({resultsState}) => {
                 </div>
             )
         )
-
     }
-
     return (
         <div className='resultsContainer'>
             <h3>Results:</h3>
