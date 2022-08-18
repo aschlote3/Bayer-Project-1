@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './index.css'
 
 const Results = ({resultsState}) => {
 
@@ -11,9 +12,7 @@ const Results = ({resultsState}) => {
                 </div>
             )
         )
-
     }
-
     return (
         <div className='resultsContainer'>
             <h3>Results:</h3>

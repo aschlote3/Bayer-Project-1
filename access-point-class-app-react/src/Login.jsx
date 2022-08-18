@@ -11,13 +11,13 @@ const Login = ({ setLoginState }) => {
 
     const checkCredentials = () => {
         if (userState !== user && passState !== pass) {
-            console.log("login fail : invalid username and password")
+            alert("login fail : invalid username and password")
             return false;
         } else if (userState !== user) {
-            console.log("login fail : invalid username");
+            alert("login fail : invalid username");
             return false;
         } else if (passState !== pass) {
-            console.log("login fail : invalid password");
+            alert("login fail : invalid password");
             return false;
         } else {
             console.log("login success");
@@ -40,7 +40,7 @@ const Login = ({ setLoginState }) => {
             <label for="username">Username</label><br></br>
             <input type="text" id="username" name="username" className="username" onInput={e => setUserState(e.target.value)} value={userState}/><br></br>
             <label for="password">Password</label><br></br>
-            <input type="text" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState}/><br></br>
+            <input type="password" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState}/><br></br>
             <button className="loginProceed" onClick={() => doLogin()}>Login</button>
             <button className="clearName" type="submit" onClick={()=>{clear()}}>Clear</button>
         </div>
