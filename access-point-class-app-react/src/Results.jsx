@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './ResultsStyle.css'
+
+import "./Resultsstyle.css"
+
 
 const Results = ({resultsState}) => {
 
@@ -12,9 +14,7 @@ const Results = ({resultsState}) => {
                 </div>
             )
         )
-
     }
-
     return (
         <div className='resultsContainer'>
             <h3>Results:</h3>
