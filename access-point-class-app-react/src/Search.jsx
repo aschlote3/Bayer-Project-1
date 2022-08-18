@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import "./Searchstyle.css"
+
 
 
 const Search = ({setResultsState}) => {
@@ -14,7 +16,7 @@ const Search = ({setResultsState}) => {
     }
 
     return (
-        <div>
+        <div className="keyContainer">
             <label for="keywords">Keywords</label><br></br>
             <input type="text" id="keywords" name="keywords" onInput={e => setSearchState(e.target.value)}/><br></br>
             <button onClick={() => {getRequest()}}>Search</button>

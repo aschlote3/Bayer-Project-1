@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "./AddToDatabasestyle.css"
 
 
 const AddToDatabase = () => {
@@ -19,7 +20,7 @@ const AddToDatabase = () => {
             });
         }
     return (
-        <div>
+        <div className="topicsContainer">
             <label for="keyword">Add To Topics</label><br></br>
             <input type="text" id="keyword" name="keyword"/><br></br>
             <button onClick={() => setInput("keyword")}>Add To Topics</button>
