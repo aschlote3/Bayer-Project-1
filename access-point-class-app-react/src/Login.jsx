@@ -40,7 +40,7 @@ const Login = ({ setLoginState }) => {
             <label for="username">Username</label><br></br>
             <input type="text" id="username" name="username" className="username" onInput={e => setUserState(e.target.value)} value={userState}/><br></br>
             <label for="password">Password</label><br></br>
-            <input type="text" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState}/><br></br>
+            <input type="password" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState}/><br></br>
             <button className="loginProceed" onClick={() => doLogin()}>Login</button>
             <button className="clearName" type="submit" onClick={()=>{clear()}}>Clear</button>
         </div>
