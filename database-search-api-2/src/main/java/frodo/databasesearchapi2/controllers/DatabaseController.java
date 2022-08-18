@@ -57,8 +57,19 @@ public class DatabaseController {
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/topic/all")
+    public ResponseEntity<List<Results>> getAllReviews(@RequestParam(required = false) String productDescription) {
+            List<Results> _results = new ArrayList<Results>();
+            resultsRepository.findAll().forEach(_results::add);
+            if (_results.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(_results, HttpStatus.OK);
+        }
+
+    }
 
 
 
 
-}
