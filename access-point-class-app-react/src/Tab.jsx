@@ -13,7 +13,9 @@ const Tab = ({setLoginState, tabMenu}) => {
             <button>Steps</button>
             <button onClick={() => {setLoginState(false)}}>Back</button>
             <div>{tabMenu()}</div>
+        
         </div>
+        
     )
 
 }
