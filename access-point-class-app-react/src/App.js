@@ -28,16 +28,7 @@ function App() {
         }
 
     }
-
-    const sendRequest = (data) => {
-        fetch("http://localhost:8090/api/keywords", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        }).then(res => {
-            console.log("Request complete! response:", res);
-        });
-    }
+  
 
     
 
@@ -47,8 +38,6 @@ function App() {
                 <Login setLoginState={setLoginState}/>
                 : <div><Tab setLoginState={setLoginState} tabMenu={tabMenu}/><Search setResultsState={setResultsState}/><Results resultsState={resultsState}/><AddToDatabase/></div>
             }
-            
-            
             
 
         </div>
