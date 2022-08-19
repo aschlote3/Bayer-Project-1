@@ -1,3 +1,11 @@
 .topicsContainer {
     text-align: center;
 }
+.clearName {
+    background-color: #FFBF00;
+    color: black;
+}
+.addToTopics {
+    background-color: #FFBF00;
+    color: black;
+}

@@ -16,15 +16,23 @@ const Search = ({setResultsState, resultsState}) => {
                 setResultsState(data);
             })
     }
+    const getAllKeywords = () => {
+        fetch(`http://localhost:8090/api/keywords/all`)
+            .then(response => response.json())
+            .then(data => {
+                setResultsState(data);
+            })
+    }
 
 
     return (
 
         <div className="keyContainer">
-            <label for="keywords">Keywords</label><br></br>
-            <input type="text" id="keywords" name="keywords" onInput={e => setSearchState(e.target.value)}/><br></br>
+            <label for="keywords">Keywords: </label>
+            <input type="text" id="keywords" name="keywords" onInput={e => setSearchState(e.target.value)}/>
 
             <button onClick={() => {getRequest()}}>Search</button>
+            <button onClick={() => {getAllKeywords()}}>View All</button>
         </div>
     );
 }
