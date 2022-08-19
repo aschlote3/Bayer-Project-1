@@ -3,12 +3,10 @@
     --bright-blue: hsl(245, 75%, 52%);
     --very-pale-blue: hsl(225, 100%, 98%);
     --desaturated-blue: hsl(224, 23%, 55%);
-    --dark-blue: hsl(223, 47%, 23%);
-    --light-blue: hsl(210, 100%, 75%);
+    --dark-blue: #00314e;
+    --light-blue: #01beff;
     --independence: hsl(341, 18%, 58);
 }
-
-
 
 .loginContainer {
     text-align: center;
@@ -25,7 +23,7 @@
 .loginProceed {
     background-color: var(--light-blue);
     padding: 1rem 0;
-    color: white;
+    color: #00314e;
     box-shadow: 0 20px 30px -8px rgb(197 189 245);
     box-sizing: border-box;
     width: 100px;
@@ -41,7 +39,7 @@
 .clearName {
     background-color: var(--light-blue);
     padding: 1rem 0;
-    color: white;
+    color: #00314e;
     box-shadow: 0 20px 30px -8px rgb(197 189 245);
     box-sizing: border-box;
     width: 100px;
