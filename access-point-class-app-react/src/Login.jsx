@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./Loginstyle.css";
-
+ 
 const Login = ({ setLoginState }) => {
-
+ 
     const user = "username";
     const pass = "password";
     const [userState, setUserState] = useState(null);
     const [passState, setPassState] = useState(null);
-
-
+ 
+ 
     const checkCredentials = () => {
         if (userState !== user && passState !== pass) {
             alert("login fail : invalid username and password")
@@ -24,16 +24,16 @@ const Login = ({ setLoginState }) => {
             return true;
         }
     }
-
+ 
     const doLogin = () => {
         setLoginState(checkCredentials());
     }
-
+ 
     const clear = () => {
         setUserState('');
         setPassState('');
     }
-
+ 
     return (
         <div className="loginContainer">
             <h1>Access Point Class of 2022</h1>
@@ -47,5 +47,5 @@ const Login = ({ setLoginState }) => {
         </div>
     );
 }
-
+ 
 export default Login;
