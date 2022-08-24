@@ -28,6 +28,7 @@ const Login = ({ setLoginState }) => {
     const doLogin = () => {
         setLoginState(checkCredentials());
     }
+
     const clear = () => {
         setUserState('');
         setPassState('');
@@ -38,11 +39,11 @@ const Login = ({ setLoginState }) => {
             <h1>Access Point Class of 2022</h1>
             <h3>Let's Go Get It</h3><br></br>
             <label for="username">Username</label><br></br>
-            <input autocomplete="on" type="text" id="username" name="username" className="username" onInput={e => setUserState(e.target.value)} value={userState}/><br></br>
+            <input autocomplete="on" type="text" id="username" name="username" className="username" onInput={e => setUserState(e.target.value)} value={userState} /><br></br>
             <label for="password">Password</label><br></br>
-            <input autocomplete="on" type="password" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState}/><br></br>
+            <input autocomplete="on" type="password" id="password" name="password" onInput={e => setPassState(e.target.value)} value={passState} /><br></br>
             <button className="loginProceed" onClick={() => doLogin()}>Login</button>
-            <button className="clearName" type="submit" onClick={()=>{clear()}}>Clear</button>
+            <button className="clearName" type="submit" onClick={() => { clear() }}>Clear</button>
         </div>
     );
 }

@@ -8,11 +8,11 @@ const AddToDatabase = () => {
 
     const keyword = {
         keyword : input
-        };
+    };
 
-     const clear = () => {
+    const clear = () => {
         setInput('');
-        }
+    }
 
      const sendRequest = (keyword) => {
             fetch("http://localhost:8090/api/keywords", {

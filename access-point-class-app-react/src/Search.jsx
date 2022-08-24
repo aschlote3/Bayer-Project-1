@@ -1,11 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import "./Searchstyle.css"
 
-
-
-
-const Search = ({setResultsState, resultsState}) => {
+const Search = ({ setResultsState, resultsState }) => {
 
     const [searchState, setSearchState] = useState(null);
 
@@ -29,10 +26,10 @@ const Search = ({setResultsState, resultsState}) => {
 
         <div className="keyContainer">
             <label for="keywords">Keywords: </label>
-            <input type="text" id="keywords" name="keywords" onInput={e => setSearchState(e.target.value)}/>
+            <input type="text" id="keywords" name="keywords" onInput={e => setSearchState(e.target.value)} />
 
-            <button onClick={() => {getRequest()}}>Search</button>
-            <button onClick={() => {getAllKeywords()}}>View All</button>
+            <button onClick={() => { getRequest() }}>Search</button>
+            <button onClick={() => { getAllKeywords() }}>View All</button>
         </div>
     );
 }
