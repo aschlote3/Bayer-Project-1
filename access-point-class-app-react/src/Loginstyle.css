@@ -7,19 +7,22 @@
     --light-blue: #01beff;
     --independence: hsl(341, 18%, 58);
 }
- 
+
 .loginContainer {
     text-align: center;
     background-color: var(--independence);
     border-radius: 20px;
     padding-bottom: 50px;
     padding-top: 16px;
+
+
+    background-color: rgb(188, 255, 188);
 }
- 
+
 .username {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
- 
+
 .loginProceed {
     background-color: var(--light-blue);
     padding: 1rem 0;
@@ -30,29 +33,35 @@
     margin-top: 30px;
     border-radius: 20px;
     margin-right: 12px;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
 }
- 
+
 .loginProceed:hover {
     opacity: 0.8;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
- 
+
 .clearName {
     background-color: var(--light-blue);
     padding: 1rem 0;
-    color: #00314e;
     box-shadow: 0 20px 30px -8px rgb(197 189 245);
     box-sizing: border-box;
     width: 100px;
     margin-top: 30px;
     border-radius: 20px;
     margin-right: 12px;
-    background-color: red;
+    border-color: #FFFFFF;
+    color: red;
 }
- 
+
 .clearName:hover {
     opacity: 0.8;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
- 
+
 .password {
     visibility: hidden;
 }
