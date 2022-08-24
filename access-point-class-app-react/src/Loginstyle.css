@@ -7,7 +7,7 @@
     --light-blue: #01beff;
     --independence: hsl(341, 18%, 58);
 }
-
+ 
 .loginContainer {
     text-align: center;
     background-color: var(--independence);
@@ -15,11 +15,11 @@
     padding-bottom: 50px;
     padding-top: 16px;
 }
-
+ 
 .username {
     margin-bottom: 12px;
 }
-
+ 
 .loginProceed {
     background-color: var(--light-blue);
     padding: 1rem 0;
@@ -31,11 +31,11 @@
     border-radius: 20px;
     margin-right: 12px;
 }
-
+ 
 .loginProceed:hover {
     opacity: 0.8;
 }
-
+ 
 .clearName {
     background-color: var(--light-blue);
     padding: 1rem 0;
@@ -48,11 +48,11 @@
     margin-right: 12px;
     background-color: red;
 }
-
+ 
 .clearName:hover {
     opacity: 0.8;
 }
-
+ 
 .password {
     visibility: hidden;
 }
