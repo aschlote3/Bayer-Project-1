@@ -29,11 +29,17 @@ public class DatabaseController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/keywords")
     public Keywords createReview(@RequestBody Keywords keyword) {
-        System.out.println(keyword);
-        System.out.println(keyword.getKeywordId());
-        System.out.println(keyword.getKeyword());
-        return keywordsRepository.save(new Keywords(keyword.getKeyword()));
-        //return new ResponseEntity<Keywords>(HttpStatus.OK);
+        List<Keywords> _keyword = keywordsRepository.findAll();
+        List<String> output = new ArrayList<>();
+        System.out.println(_keyword.size());
+        for (Keywords key : _keyword) {
+            output.add(key.getKeyword());
+        }
+        if (output.contains(keyword.getKeyword())) {
+            return null;
+        } else {
+            return keywordsRepository.save(new Keywords(keyword.getKeyword()));
+        }
     }
 
     @CrossOrigin(origins = "http://localhost:3000")
@@ -50,15 +56,37 @@ public class DatabaseController {
             }
         }
         if (output.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(output,HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(output, HttpStatus.OK);
         }
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/topic/all")
+    public ResponseEntity<List<Results>> getAllReviews(@RequestParam(required = false) String productDescription) {
+            List<Results> _results = new ArrayList<Results>();
+            resultsRepository.findAll().forEach(_results::add);
+            if (_results.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(_results, HttpStatus.OK);
+        }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/keywords/all")
+    public ResponseEntity<List<Keywords>> getAllKeywords() {
+        List<Keywords> _keywords = new ArrayList<Keywords>();
+        keywordsRepository.findAll().forEach(_keywords::add);
+        if (_keywords.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(_keywords, HttpStatus.OK);
+    }
+
+    }
 
 
 
 
-}

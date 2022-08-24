@@ -17,19 +17,19 @@ public class Keywords {
 
     @Column(name="key_id")
     private Integer key_id;
-    @Column(name="keyword")
-    private String keyword;
+    @Column(name="result")
+    private String result;
 
     public Keywords() {
     }
 
-    public Keywords(Integer key_id, String keyword) {
+    public Keywords(Integer key_id, String result) {
         this.key_id = key_id;
-        this.keyword = keyword;
+        this.result = result;
     }
 
-    public Keywords(String keyword) {
-        this.keyword = keyword;
+    public Keywords(String result) {
+        this.result = result;
     }
 
     public Integer getKeywordId() {
@@ -42,10 +42,10 @@ public class Keywords {
     }
 
     public String getKeyword() {
-        return keyword;
+        return result;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setKeyword(String result) {
+        this.result = result;
     }
 }
