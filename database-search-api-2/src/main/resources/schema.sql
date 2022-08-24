@@ -3,7 +3,7 @@ drop table if exists results;
 
 CREATE TABLE keywords (
     key_id INT NOT NULL AUTO_INCREMENT,
-    keyword VARCHAR(255)
+    result VARCHAR(255)
 );
 
 CREATE TABLE results (
